@@ -1,0 +1,129 @@
+@import url("https://fonts.googleapis.com/css2?family=Karla:ital,wght@0,200..800;1,200..800&display=swap");
+* {
+  font: inherit;
+}
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+img,
+video,
+svg {
+  display: block;
+  height: auto;
+  max-width: 100%;
+}
+body {
+  margin: 0;
+  min-height: 100dvh;
+  background-color: hsl(203, 45%, 92%);
+  display: flex;
+  justify-content: center;
+  font-family: "Karla", sans-serif;
+}
+.container {
+  max-width: 375px;
+  display: flex;
+  flex-direction: column;
+  padding: 1.75rem;
+}
+.title {
+  font-size: 1.25rem;
+  color: white;
+  font-weight: 700;
+}
+.top {
+  border-radius: 5px 5px 0 0;
+  background-color: white;
+  padding: 1.5rem;
+  color: hsl(218, 22%, 67%);
+}
+.top .title {
+  color: hsl(179, 62%, 43%);
+}
+.top .subtitle {
+  color: hsl(71, 73%, 54%);
+  font-weight: 400;
+}
+.top .description {
+  font-size: 14px;
+  line-height: 1.5;
+}
+.middle {
+  background-color: hsl(179, 61%, 44%);
+  padding: 1.5rem;
+  color: white;
+}
+.middle .subtitle {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 2rem;
+  font-weight: 700;
+}
+.middle .subtitle > span {
+  font-size: 15px;
+  font-weight: 400;
+  color: hsla(203, 44%, 93%, 0.705);
+}
+.middle .btn {
+  cursor: pointer;
+  width: 100%;
+  padding-block: 0.75rem;
+  color: white;
+  background-color: hsl(71, 73%, 54%);
+  font-weight: 700;
+  border-radius: 5px;
+  border: none;
+}
+.bottom {
+  background-color: hsl(179, 47%, 52%);
+  padding: 1rem 1.5rem;
+  border-radius: 0 0 5px 5px;
+}
+.bottom .description {
+  color: hsla(0, 0%, 100%, 0.7);
+  line-height: 1.5;
+  padding-right: 3.6rem;
+}
+
+@media (min-width: 600px) {
+  .container {
+    display: none;
+    max-width: 768px;
+    display: grid;
+    place-content: center;
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas:
+      "top top"
+      "left right";
+  }
+  .top {
+    grid-area: top;
+    padding: 2rem;
+  }
+  .top .title {
+    font-size: 2rem;
+  }
+  .top .subtitle {
+    font-size: 1.25rem;
+  }
+  .top .description {
+    font-size: 1rem;
+    padding-right: 5rem;
+  }
+  .middle,
+  .bottom {
+    padding: 2rem;
+  }
+
+  .middle {
+    grid-area: left;
+    border-radius: 0 0 0 5px;
+  }
+  .bottom {
+    grid-area: right;
+    border-radius: 0 0 5px 0;
+  }
+}
